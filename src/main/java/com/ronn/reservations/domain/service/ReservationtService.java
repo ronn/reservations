@@ -1,27 +1,23 @@
 package com.ronn.reservations.domain.service;
 
-import com.ronn.reservations.domain.model.Client;
-import com.ronn.reservations.domain.repo.ClientRepository;
+import com.ronn.reservations.domain.model.Reservation;
+import com.ronn.reservations.domain.repo.ReservationRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ClientService {
+public class ReservationtService {
 
-    private final ClientRepository clientRepo;
+    private final ReservationRepository reservationRepo;
 
-    public ClientService(ClientRepository clientRepo) {
-        this.clientRepo = clientRepo;
+    public ReservationtService(ReservationRepository reservationRepo) {
+        this.reservationRepo = reservationRepo;
     }
 
-    public Client save(Client client){
-        return clientRepo.save(client);
+    public Reservation save(Reservation reservation){
+        return reservationRepo.save(reservation);
     }
 
-    public void delete(Client client){
-        clientRepo.delete(client);
-    }
-
-    public Client sdfsf(String dni){
-        return clientRepo.findClientByDni(dni);
+    public void delete(Reservation reservation){
+        reservationRepo.delete(reservation);
     }
 }
